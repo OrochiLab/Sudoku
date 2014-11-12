@@ -51,7 +51,7 @@ include_once("../Sudoku/header.php");
 		?>
 			<br/>
 			
-				<input type="submit" value="Valider"/>
+				<button class="btn btn-danger" type="submit" value="Valider">Valider</button>
 			</form>
 		<?php
 		}
