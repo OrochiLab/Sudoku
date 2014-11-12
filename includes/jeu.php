@@ -2,8 +2,7 @@
 require_once('Metier/Grille.class.php');
 
 ?>
-
-<form action="verifier.php" method="post">
+	<form action="?page=verifier" method="post">
 	<?php
 		if(isset($_POST['choix']))
 		{

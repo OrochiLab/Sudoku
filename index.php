@@ -1,3 +1,8 @@
+﻿<?php
+session_start();
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -5,20 +10,51 @@
 	<title></title>
 </head>
 <body>
+<?php
 
-	<fieldset>
-		<legend>Authentification :</legend>
-	<form action="panel.php" method="post">
-		<pre>
-			Login        : <input type="text"  name="login" />
-			
-			Mot de passe : <input type="password" name="pass" />
-			
-				           <input type="submit" value="Valider" />
-		
-		</pre>
+if(!isset($_GET['page']))
+	$_GET['page'] = 'accueil';
+
 	
-	</form>
-	</fieldset>
+if(isset($_SESSION['nom']) and $_GET['page']!='deconnexion')
+	echo '<h4>Joueur : '.$_SESSION['nom'].'</h4>';
+	
+	if($_GET['page']!='accueil')
+		echo '<a href="?page=accueil">Retour à la page d\'accueil</a>';
+	
+
+	switch($_GET['page'])
+	{
+		case 'accueil':
+		include_once('includes/login.php');
+		break;	
+		
+		case 'panel':
+		include_once('includes/panel.php');
+		break;
+		
+		case 'deconnexion':
+		session_destroy();
+		$_SESSION=array();	
+		include_once('includes/login.php');
+		break;
+	
+		case 'jeu':
+		include_once('includes/jeu.php');
+		break;
+		
+		case 'verifier':
+		include_once('includes/verifier.php');
+		break;
+		
+		
+		default;
+		include_once('includes/login.php');
+		break;
+	
+	}
+	
+	
+	?>
 </body>
 </html>

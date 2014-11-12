@@ -1,10 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
+
 	<?php
 	require_once('Metier/Grille.class.php');
 	$matrice=array();
@@ -109,5 +103,3 @@
 		}
 	
 	?>
-</body>
-</html>

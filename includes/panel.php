@@ -1,22 +1,17 @@
-﻿<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	
+﻿
 <?php
 require_once('Metier/Joueur.class.php');
 
 	if(isset($_POST['login']) and isset($_POST['pass']))
 	{
 		$joueur = Joueur::getJoueur($_POST['login'],$_POST['pass']);
-		if(isset($joueur))
-		{
+		$_SESSION['nom']=$joueur->getNom();
+	}
+	if(isset($joueur) or isset($_SESSION['nom']))
+	{
+			
 		?>
-			<h1>Bonjour : <?php echo $joueur->getNom();?></h1>
-			<form action="jeu.php" method="post">
+			<form action="?page=jeu" method="post">
 <pre>
 Veuillez choisir entre : <select name="choix"> 
 <option value="9">9x9</option>
@@ -31,9 +26,6 @@ Veuillez choisir entre : <select name="choix">
 			</form>
 		
 		<?php
-		}
-		else
-			echo '<h1>Authentification echouée</h1>';
 	}
 	else
 	{
@@ -42,5 +34,3 @@ Veuillez choisir entre : <select name="choix">
 
 
 ?>
-</body>
-</html>
