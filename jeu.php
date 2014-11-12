@@ -2,14 +2,8 @@
 require_once('Metier/Grille.class.php');
 
 ?>
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	<form action="verifier.php" method="post">
+
+<form action="verifier.php" method="post">
 	<?php
 		if(isset($_POST['choix']))
 		{
@@ -67,5 +61,3 @@ require_once('Metier/Grille.class.php');
 		echo 'Access denied';
 		}
 	?>
-</body>
-</html>
