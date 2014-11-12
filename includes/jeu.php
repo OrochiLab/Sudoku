@@ -1,9 +1,10 @@
 ﻿<?php
 require_once('Metier/Grille.class.php');
-
+include_once("../Sudoku/header.php");
 ?>
-	<form action="?page=verifier" method="post">
-	<?php
+<div class="span6">
+		<form class="form" action="?page=verifier" method="post">
+<?php
 		if(isset($_POST['choix']))
 		{
 		 $taille = $_POST['choix'];
@@ -58,5 +59,5 @@ require_once('Metier/Grille.class.php');
 		{
 		
 		echo 'Access denied';
-		}
-	?>
+		}?>
+</div>

@@ -1,5 +1,6 @@
 ﻿
 <?php
+include_once('../Sudoku/header.php');
 require_once('Metier/Joueur.class.php');
 
 	if(isset($_POST['login']) and isset($_POST['pass']))
@@ -10,22 +11,24 @@ require_once('Metier/Joueur.class.php');
 	if(isset($joueur) or isset($_SESSION['nom']))
 	{
 			
-		?>
-			<form action="?page=jeu" method="post">
-<pre>
-Veuillez choisir entre : <select name="choix"> 
-<option value="9">9x9</option>
-<option value="16">16x16</option>
+?>
+	<div class="row span6">
+		<form class="form" action="?page=jeu" method="post">
+			<pre>
+			Veuillez choisir entre : 
+			<select name="choix"> 
+				<option value="9">9x9</option>
+				<option value="16">16x16</option>
+			</select> pour commencer une partie
 
-</select> pour commencer une partie
+			<input type="submit" value="Valider" />
 
-<input type="submit" value="Valider" />
+			</pre>
+					
+		</form>
 
-</pre>
-			
-			</form>
-		
-		<?php
+	</div>		
+<?php
 	}
 	else
 	{

@@ -1,15 +1,6 @@
 ﻿<?php
 session_start();
-
 ?>
-
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
 <?php
 
 if(!isset($_GET['page']))
@@ -20,7 +11,7 @@ if(isset($_SESSION['nom']) and $_GET['page']!='deconnexion')
 	echo '<h4>Joueur : '.$_SESSION['nom'].'</h4>';
 	
 	if($_GET['page']!='accueil')
-		echo '<a href="?page=accueil">Retour à la page d\'accueil</a>';
+		//echo '<a href="?page=accueil">Retour à la page d\'accueil</a>';
 	
 
 	switch($_GET['page'])
@@ -54,7 +45,5 @@ if(isset($_SESSION['nom']) and $_GET['page']!='deconnexion')
 	
 	}
 	
-	
+	include_once ('footer.php');
 	?>
-</body>
-</html>
